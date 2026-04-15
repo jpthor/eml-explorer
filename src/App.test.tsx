@@ -17,6 +17,8 @@ describe('App', () => {
 
     expect(screen.getByTestId('gallery-title')).toHaveTextContent('x + y')
     expect(screen.getByTestId('operation-card-imported')).toBeInTheDocument()
+    expect(screen.getByTestId('paper-link')).toHaveAttribute('href', 'https://arxiv.org/abs/2603.21852')
+    expect(screen.getByTestId('github-link')).toHaveAttribute('href', 'https://github.com/jpthor/eml-explorer')
   })
 
   it('collapses the featured explorer tree down to the full final formula', async () => {

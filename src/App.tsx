@@ -47,6 +47,8 @@ const PRESET_DEFINITIONS = [
 
 const START_FORMULA = 'x + y'
 const START_COMPILED = compileInputToEml(START_FORMULA)
+const PAPER_URL = 'https://arxiv.org/abs/2603.21852'
+const REPO_URL = 'https://github.com/jpthor/eml-explorer'
 
 function reducer(state: State, action: Action): State {
   switch (action.type) {
@@ -126,8 +128,31 @@ function App() {
     <main className="app-shell app-shell--gallery">
       <section className="panel-frame app-bar">
         <div className="control-topbar">
-          <h1>EML Explorer</h1>
-          <p>Import formulas, build trees by hand, or search for a matching EML witness.</p>
+          <div className="control-topbar__title">
+            <h1>EML Explorer</h1>
+            <p>Import formulas, build trees by hand, or search for a matching EML witness.</p>
+          </div>
+
+          <div className="control-links" aria-label="Project links">
+            <a
+              className="control-links__item"
+              data-testid="paper-link"
+              href={PAPER_URL}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Paper
+            </a>
+            <a
+              className="control-links__item"
+              data-testid="github-link"
+              href={REPO_URL}
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+          </div>
         </div>
 
         <div className="app-tabs" role="tablist" aria-label="EML modes">
